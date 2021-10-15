@@ -1,0 +1,57 @@
+apiVersion: v1
+data:
+  index.html: |
+    <html>
+     <head>
+      <title>blue</title>
+     </head>
+     <body bgcolor="#11a7f7">
+      <h1>V2</h1>
+     </body>
+    </html>
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: index-blue-v2
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blue
+  labels:
+    app: web-version
+    color: blue
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: web-version
+  template:
+    metadata:
+      labels:
+        app: web-version
+        color: blue
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: config-volume
+          mountPath: /usr/share/nginx/html
+      volumes:
+      - name: config-volume
+        configMap:
+          name: index-blue-v2
+# ---
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: blue
+# spec:
+#   type: LoadBalancer
+#   ports:
+#   - port: 80
+#   selector:
+#     color: blue

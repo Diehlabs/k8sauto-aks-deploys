@@ -1,0 +1,47 @@
+apiVersion: v2
+data:
+  index.html: |
+    <html>
+     <head>
+      <title>green</title>
+     </head>
+     <body bgcolor="#6dc066">
+      <h1>v2</h1>
+     </body>
+    </html>
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: index-green-v2
+---
+apiVersion: apps/v2
+kind: Deployment
+metadata:
+  name: green
+  labels:
+    app: web-version
+    color: green
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: web-version
+  template:
+    metadata:
+      labels:
+        app: web-version
+        color: green
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: config-volume
+          mountPath: /usr/share/nginx/html
+      volumes:
+      - name: config-volume
+        configMap:
+          name: index-green-v2
+---
