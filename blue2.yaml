@@ -44,14 +44,3 @@ spec:
       - name: config-volume
         configMap:
           name: index-blue-v2
-# ---
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   name: blue
-# spec:
-#   type: LoadBalancer
-#   ports:
-#   - port: 80
-#   selector:
-#     color: blue
