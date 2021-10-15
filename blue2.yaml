@@ -19,17 +19,17 @@ kind: Deployment
 metadata:
   name: blue
   labels:
-    app: web-version
+    app: bg-test
     color: blue
 spec:
   replicas: 5
   selector:
     matchLabels:
-      app: web-version
+      app: bg-test
   template:
     metadata:
       labels:
-        app: web-version
+        app: bg-test
         color: blue
     spec:
       containers:
