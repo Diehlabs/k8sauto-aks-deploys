@@ -12,12 +12,14 @@ data:
 kind: ConfigMap
 metadata:
   creationTimestamp: null
+  namespace: sandbox
   name: index-green-v2
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: green
+  namespace: sandbox
   labels:
     app: bg-test
     color: green
