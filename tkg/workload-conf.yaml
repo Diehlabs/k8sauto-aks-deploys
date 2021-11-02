@@ -1,0 +1,132 @@
+#! ---------------------------------------------------------------------
+#! Cluster creation basic configuration
+#! ---------------------------------------------------------------------
+
+CLUSTER_NAME: workload01
+CLUSTER_PLAN: dev
+NAMESPACE: default
+CNI: antrea
+# CLUSTER_CIDR: 100.96.0.0/11
+# CLUSTER_NAME: tkg-mgmt
+# CLUSTER_PLAN: dev
+
+#! ---------------------------------------------------------------------
+#! Node configuration
+#! ---------------------------------------------------------------------
+
+# SIZE:
+# CONTROLPLANE_SIZE:
+# WORKER_SIZE:
+# AZURE_CONTROL_PLANE_MACHINE_TYPE: "Standard_D2s_v3"
+# AZURE_NODE_MACHINE_TYPE: "Standard_D2s_v3"
+# CONTROL_PLANE_MACHINE_COUNT: 1
+# WORKER_MACHINE_COUNT: 1
+# WORKER_MACHINE_COUNT_0:
+# WORKER_MACHINE_COUNT_1:
+# WORKER_MACHINE_COUNT_2:
+# AZURE_CONTROL_PLANE_DATA_DISK_SIZE_GIB : ""
+# AZURE_CONTROL_PLANE_OS_DISK_SIZE_GIB : ""
+# AZURE_CONTROL_PLANE_MACHINE_TYPE : ""
+# AZURE_CONTROL_PLANE_OS_DISK_STORAGE_ACCOUNT_TYPE : ""
+# AZURE_ENABLE_NODE_DATA_DISK : ""
+# AZURE_NODE_DATA_DISK_SIZE_GIB : ""
+# AZURE_NODE_OS_DISK_SIZE_GIB : ""
+# AZURE_NODE_MACHINE_TYPE : ""
+# AZURE_NODE_OS_DISK_STORAGE_ACCOUNT_TYPE : ""
+
+#! ---------------------------------------------------------------------
+#! Azure Configuration
+#! ---------------------------------------------------------------------
+
+AZURE_ENVIRONMENT: "AzurePublicCloud"
+AZURE_SUBSCRIPTION_ID: e5c064d7-9c8f-4e8d-ba57-5da9f1610cb3
+AZURE_TENANT_ID: ea7c73d0-fb18-4161-8331-8341717ba99c
+AZURE_CLIENT_ID: <encoded:N2YwNDUxYzctODdiNi00Zjk2LTllYzgtYzZkMGEyNWU0MmUw>
+AZURE_CLIENT_SECRET: <encoded:YzUyN1F+Tm80bFNCMXppSWRKNFUyVUFSSmRLcGhmSnNsRmxrZw==>
+AZURE_LOCATION: westus
+AZURE_SSH_PUBLIC_KEY_B64: c3NoLXJzYSBBQUFBQjNOemFDMXljMkVBQUFBREFRQUJBQUFDQVFDb2FDMWFPRHRXS2ZPd3NGZGJUNFlKN2hGRVFNTnNFUVBMM2lrbVBiUEEvSXhHRmRHREUxbXlmeDZBWGZaYlJucWxZVWdxaEZBN1JRQTZ6blJXb2tOd0VPNG5jUmt2UU5PQkpUOHd6Y3dybkJxdHpqSTVzZjAyU0MyMHF3bjh5enU5N0VYVXhQR2R5VXg1bzNZMHk2MHBwN05ieHBGbU1QVkRZbmtpNm5OWjB2L3VRQ1VnV0psQUE3V0krNUtNbytFby93VkRIbmFEbXJDVk5WK0c2VlRLTXJZbWFMNjVxbUNJZktabCt2QWwwZ3NDb25tM0VWa0xyQm85M2FPVVE1UGVqZU9aRmxRTDdrVDNUd2dRUEhHMlpHTnRJUTIydzhkTkNoNEhvMFllWlBSR05MMlppQ05ESEJuL2NDZjhEbFdXUW8xV2ZKUWM5SWxNcXh4VG9Vdk5lM2dTcHdXK1MrSXJUcmFyL2pJMElUT0JnRnpzalBJMVpSZ0JPYnhqeUttVU5kK2RkYzdqKzVNOG1ITURCYklsb004R003clMwUmRzMXJLb2MwY09rT25uWHUzc1VXd1NjUVU5UFcvZmFlaU1iR2liRjc4VVE1dm85Y3dhSVFGS3IwR1NldHczc3JMc2dHL21nUGNyOEg5b2tmMzZzL2pKbmNwcHUzVjQyVUVIbkg2Wm0xaEV1aHlZMTlSYjFSYmtUSW92OFJIM0NZeDJsd2xZQmlITk5jOTFPRW9kRUJqVml5TkRxWTJkeFp0QzRWUnZaMFZOeVNMVVBQWWdCcFYvSlJick5jWkd3M2crMFhPenk1MGRmZ1RpMW5JYUNEbGp0c1lyU3NSNUUyUjEzZWRmbXVFbHNGR1JXQXZoQzV2OFprdW5mOUl5NzBxSFpOZkE5RUFxYnc9PSBkaWVobGdvQGV4YW1wbGUuY29t
+
+AZURE_CONTROL_PLANE_MACHINE_TYPE: Standard_D2s_v3
+AZURE_CONTROL_PLANE_SUBNET_CIDR: 10.0.2.0/24
+AZURE_CONTROL_PLANE_SUBNET_NAME: tkg-workload-control-plane
+AZURE_ENABLE_PRIVATE_CLUSTER: ""
+AZURE_FRONTEND_PRIVATE_IP: ""
+
+AZURE_NODE_MACHINE_TYPE: Standard_D2s_v3
+AZURE_NODE_SUBNET_CIDR: 10.0.3.0/24
+AZURE_NODE_SUBNET_NAME: tkg-workload-node
+AZURE_RESOURCE_GROUP: tkg-ce-workload
+
+AZURE_VNET_CIDR: 10.0.0.0/16
+AZURE_VNET_NAME: tkg-mgmt
+AZURE_VNET_RESOURCE_GROUP: tkg-ce
+
+# AZURE_CONTROL_PLANE_SUBNET_NAME: ""
+# AZURE_CONTROL_PLANE_SUBNET_CIDR: ""
+# AZURE_NODE_SUBNET_NAME: ""
+# AZURE_NODE_SUBNET_CIDR: ""
+# AZURE_RESOURCE_GROUP: ""
+# AZURE_VNET_RESOURCE_GROUP: ""
+# AZURE_VNET_NAME: ""
+# AZURE_VNET_CIDR: ""
+# AZURE_CUSTOM_TAGS : ""
+# AZURE_ENABLE_PRIVATE_CLUSTER : ""
+# AZURE_FRONTEND_PRIVATE_IP : ""
+# AZURE_ENABLE_ACCELERATED_NETWORKING : ""
+
+#! ---------------------------------------------------------------------
+#! Machine Health Check configuration
+#! ---------------------------------------------------------------------
+
+ENABLE_MHC: true
+MHC_UNKNOWN_STATUS_TIMEOUT: 5m
+MHC_FALSE_STATUS_TIMEOUT: 12m
+
+#! ---------------------------------------------------------------------
+#! Common configuration
+#! ---------------------------------------------------------------------
+
+# TKG_CUSTOM_IMAGE_REPOSITORY: ""
+# TKG_CUSTOM_IMAGE_REPOSITORY_CA_CERTIFICATE: ""
+
+# TKG_HTTP_PROXY: ""
+# TKG_HTTPS_PROXY: ""
+# TKG_NO_PROXY: ""
+
+ENABLE_AUDIT_LOGGING: false
+ENABLE_DEFAULT_STORAGE_CLASS: true
+
+CLUSTER_CIDR: 100.96.0.0/11
+SERVICE_CIDR: 100.64.0.0/13
+
+OS_ARCH: amd64
+OS_NAME: ubuntu
+OS_VERSION: "20.04"
+
+#! ---------------------------------------------------------------------
+#! Autoscaler configuration
+#! ---------------------------------------------------------------------
+
+ENABLE_AUTOSCALER: false
+# AUTOSCALER_MAX_NODES_TOTAL: "0"
+# AUTOSCALER_SCALE_DOWN_DELAY_AFTER_ADD: "10m"
+# AUTOSCALER_SCALE_DOWN_DELAY_AFTER_DELETE: "10s"
+# AUTOSCALER_SCALE_DOWN_DELAY_AFTER_FAILURE: "3m"
+# AUTOSCALER_SCALE_DOWN_UNNEEDED_TIME: "10m"
+# AUTOSCALER_MAX_NODE_PROVISION_TIME: "15m"
+# AUTOSCALER_MIN_SIZE_0:
+# AUTOSCALER_MAX_SIZE_0:
+# AUTOSCALER_MIN_SIZE_1:
+# AUTOSCALER_MAX_SIZE_1:
+# AUTOSCALER_MIN_SIZE_2:
+# AUTOSCALER_MAX_SIZE_2:
+
+#! ---------------------------------------------------------------------
+#! Antrea CNI configuration
+#! ---------------------------------------------------------------------
+
+# ANTREA_NO_SNAT: false
+# ANTREA_TRAFFIC_ENCAP_MODE: "encap"
+# ANTREA_PROXY: false
+# ANTREA_POLICY: true
+# ANTREA_TRACEFLOW: false
